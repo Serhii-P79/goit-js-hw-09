@@ -1,0 +1,26 @@
+.container-buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  button {
+    padding: 15px;
+    font-size: 25px;
+    &:first-child {
+      margin-right: 15px;
+    }
+  }
+}
+
+.home {
+  margin-left: 15px;
+
+  &__color-switcher {
+    position: absolute;
+  }
+}
+
+.body {
+  position: relative;
+}
