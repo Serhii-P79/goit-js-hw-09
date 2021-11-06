@@ -7,7 +7,6 @@ export function getRandomHexColor() {
   return genColor;
 }
 
-
 export function convertMs(ms) {
   // Number of milliseconds per unit of time
   const second = 1000;
@@ -25,4 +24,20 @@ export function convertMs(ms) {
   const seconds = Math.floor((((ms % day) % hour) % minute) / second);
 
   return { days, hours, minutes, seconds };
+}
+
+function addLeadingZero(value) {
+  return value < 10 ? `0${value}` : value;
+}
+
+export function dateOutput({ days, hours, minutes, seconds }, ref = {}) {
+  days = addLeadingZero(days);
+  hours = addLeadingZero(hours);
+  minutes = addLeadingZero(minutes);
+  seconds = addLeadingZero(seconds);
+
+  ref.dataDays.innerHTML = days;
+  ref.dataHours.innerHTML = hours;
+  ref.dataMinutes.innerHTML = minutes;
+  ref.dataSeconds.innerHTML = seconds;
 }

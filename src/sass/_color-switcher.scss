@@ -4,7 +4,9 @@
   align-items: center;
   width: 100vw;
   height: 100vh;
+
   button {
+    min-width: 150px;
     padding: 15px;
     font-size: 25px;
     &:first-child {
@@ -16,9 +18,9 @@
 .home {
   margin-left: 15px;
 
-  &__color-switcher {
-    position: absolute;
-  }
+  // &__color-switcher {
+  position: absolute;
+  // }
 }
 
 .body {
