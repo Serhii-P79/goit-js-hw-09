@@ -18,8 +18,6 @@ const ref = {
 const options = {
   notify: {
     position: 'center-center',
-    // fontSize: '18px',
-    // width: '400px',
   },
   flatpickr: {
     locale: Russian,

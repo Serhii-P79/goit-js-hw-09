@@ -1,3 +1,11 @@
+import { Notify } from 'notiflix/build/notiflix-notify-aio';
+
+const options = {
+  notify: {
+    timeout: 6000,
+  },
+};
+
 export function getRandomHexColor() {
   let genColor = '';
   const regexp = /#[a-f0-9]{6}/gi;
@@ -40,4 +48,31 @@ export function dateOutput({ days, hours, minutes, seconds }, ref = {}) {
   ref.dataHours.innerHTML = hours;
   ref.dataMinutes.innerHTML = minutes;
   ref.dataSeconds.innerHTML = seconds;
+}
+
+function createPromise(position, delay) {
+  const shouldResolve = Math.random() > 0.3;
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      if (shouldResolve) {
+        resolve({ position, delay });
+      } else {
+        reject({ position, delay });
+      }
+    }, delay);
+  });
+}
+
+export function startPromise({ startDelay, stepDelay, count }) {
+  for (let i = 1; i <= count; i += 1) {
+    createPromise(i, startDelay)
+      .then(({ position, delay }) => {
+        Notify.success(`✅ Fulfilled promise ${position} in ${delay}ms`, options.notify);
+      })
+      .catch(({ position, delay }) => {
+        Notify.failure(`❌ Rejected promise ${position} in ${delay}ms`, options.notify);
+      });
+
+    startDelay += stepDelay;
+  }
 }
