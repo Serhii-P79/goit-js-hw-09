@@ -3,4 +3,4 @@ parcelRequire=function(e,r,t,n){var i,o="function"==typeof parcelRequire&&parcel
 },{}],"GyVV":[function(require,module,exports) {
 "use strict";function s(s,a){Math.random()}require("../sass/main.scss");
 },{"../sass/main.scss":"clu1"}]},{},["GyVV"], null)
-//# sourceMappingURL=/goit-js-hw-09/03-promises.4726383e.js.map
+//# sourceMappingURL=/goit-js-hw-09/03-promises.79650bfe.js.map
